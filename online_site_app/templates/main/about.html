@@ -1,0 +1,314 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="container my-5">
+  <div class="card border-0 shadow rounded-4 p-4 p-md-5 bg-white hover-grow">
+    <div class="card-body">
+      <!-- Sarlavha -->
+      <h1 class="text-primary fw-bold mb-4 text-center text-md-start floating">
+        🏫 Biz haqimizda
+      </h1>
+
+      <!-- Kirish -->
+      <p class="fs-5 text-secondary lh-lg fade-in">
+        <strong class="highlight">Hojiyev's School</strong> — bu faqatgina o'quv markazi emas, bu
+        – bilim, o'sish va muvaffaqiyat sari yo'l! Biz o'z oldimizga yosh
+        avlodga sifatli ta'lim berish, ularni zamonaviy dunyoga tayyorlash va
+        har bir o'quvchining ichki salohiyatini ochishga ko'maklashishni maqsad
+        qilganmiz.
+      </p>
+
+      <!-- Afzalliklar -->
+      <div class="mt-4 slide-in-left">
+        <h5 class="text-success fw-semibold mb-3 pulse">📘 Markazimizda:</h5>
+        <ul class="list-unstyled fs-5 text-secondary lh-lg">
+          <li class="list-item">✅ Malakali, mehribon va tajribali o'qituvchilar dars beradi</li>
+          <li class="list-item">✅ Har bir o'quvchiga individual yondashuv mavjud</li>
+          <li class="list-item">
+            ✅ Zamonaviy dars metodlari, texnologiyalar va qulay muhit
+            yaratilgan
+          </li>
+        </ul>
+      </div>
+
+      <!-- Qadriyatlar -->
+      <div class="mt-4 slide-in-right">
+        <h5 class="text-success fw-semibold mb-3 pulse">🎯 Qadriyatlarimiz:</h5>
+        <ul class="list-unstyled fs-5 text-secondary lh-lg">
+          <li class="list-item">✅ Sifatli ta'lim</li>
+          <li class="list-item">✅ Halollik va mas'uliyat</li>
+          <li class="list-item">✅ O'sish va motivatsiya</li>
+        </ul>
+      </div>
+
+      <div class="mt-4 fs-5 text-secondary lh-lg fade-in">
+        👨‍👩‍👧‍👦 Har bir farzand — bu biz uchun kelajak.<br />
+        Biz bu kelajakni yorqin qilishga xizmat qilamiz.
+      </div>
+
+      <!-- Maqsadlar -->
+      <hr class="my-5 hr-expand" />
+      <h5 class="text-primary fw-bold mb-4 pulse">🎯 Maqsadimiz:</h5>
+      <ul class="list-group list-group-flush fs-6">
+        <li class="list-group-item bg-transparent hover-item">
+          🚀 Innovatsion ta'limni ommalashtirish
+        </li>
+        <li class="list-group-item bg-transparent hover-item">
+          🌍 O'quvchilarga qulay interfeys va mustahkam bilim berish
+        </li>
+        <li class="list-group-item bg-transparent hover-item">
+          📱 Texnologiyalardan foydalangan holda samaradorlikni oshirish
+        </li>
+        <li class="list-group-item bg-transparent hover-item">
+          📘 Yuqori malakali o'qituvchilarni jalb qilish
+        </li>
+        <li class="list-group-item bg-transparent hover-item">
+          🧑‍🏫 Interaktiv dars metodlaridan foydalanish
+        </li>
+        <li class="list-group-item bg-transparent hover-item">
+          📝 Har oy test va imtihonlar orqali baholash
+        </li>
+        <li class="list-group-item bg-transparent hover-item">
+          ☀️ Yozgi intensiv kurslar va master-klasslar
+        </li>
+        <li class="list-group-item bg-transparent hover-item">
+          📊 Oylik natijalar bo'yicha ota-onalar bilan uchrashuvlar
+        </li>
+      </ul>
+
+      <!-- Bog'lanish -->
+      <hr class="my-5 hr-expand" />
+      <h5 class="text-primary fw-bold mb-4 pulse">📞 Biz bilan bog'laning:</h5>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 d-flex align-items-center gap-2 hover-scale">
+          <i class="bi bi-telephone-fill text-success fs-5"></i>
+          <span class="fs-6">
+            <a href="tel:+998 93 086 30 39" class="contact-link">+998 93 086 30 39</a>
+          </span>
+        </div>
+        <div class="col-12 col-md-6 d-flex align-items-center gap-2 hover-scale">
+          <i class="bi bi-telegram text-primary fs-5"></i>
+          <a href="https://t.me/hojiyevlar_course" target="_blank" class="contact-link">
+            Telegram
+          </a>
+        </div>
+        <div class="col-12 col-md-6 d-flex align-items-center gap-2 hover-scale">
+          <i class="bi bi-instagram text-danger fs-5"></i>
+          <a href="https://instagram.com/hojiyevschool" target="_blank" class="contact-link">
+            Instagram
+          </a>
+        </div>
+        <div class="col-12 col-md-6 d-flex align-items-center gap-2">
+          <i class="bi bi-geo-alt-fill text-danger fs-5"></i>
+          <a href="https://maps.app.goo.gl/L2tqeXVAftscupfm6" target="_blank" 
+             class="btn btn-outline-primary rounded-pill px-4 py-2 fs-6 hover-grow">
+            📍 Lokatsiyani ko'rish
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<style>
+  /* Floating animation */
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+  
+  @keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  /* Fade in effect */
+  .fade-in {
+    animation: fadeIn 1s ease-in forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Slide in animations */
+  .slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+  
+  .slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+  
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  /* List items animation */
+  .list-item {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  
+  .list-item:nth-child(1) { animation-delay: 0.3s; }
+  .list-item:nth-child(2) { animation-delay: 0.5s; }
+  .list-item:nth-child(3) { animation-delay: 0.7s; }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* HR animation */
+  .hr-expand {
+    width: 0;
+    animation: hrExpand 1s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes hrExpand {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  /* Pulse animation */
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Hover effects */
+  .hover-grow {
+    transition: transform 0.3s ease;
+  }
+  
+  .hover-grow:hover {
+    transform: scale(1.02);
+  }
+  
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  .hover-item {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .hover-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+    box-shadow: inset 3px 0 0 #0d6efd;
+  }
+  
+  /* Highlight effect */
+  .highlight {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-color: rgba(13, 110, 253, 0.2);
+    z-index: -1;
+    transition: height 0.3s ease;
+  }
+  
+  .highlight:hover::after {
+    height: 50%;
+  }
+  
+  /* Contact links */
+  .contact-link {
+    text-decoration: none;
+    color: #0d6efd;
+    position: relative;
+  }
+  
+  .contact-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0d6efd;
+    transition: width 0.3s ease;
+  }
+  
+  .contact-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Card hover effect */
+  .card {
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 576px) {
+    .fs-5 {
+      font-size: 1rem !important;
+    }
+    .fs-6 {
+      font-size: 0.95rem !important;
+    }
+  }
+</style>
+
+<script>
+  // Add intersection observer for scroll animations
+  document.addEventListener('DOMContentLoaded', function() {
+    const animateOnScroll = function() {
+      const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .list-item');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementPosition < windowHeight - 100) {
+          element.style.opacity = 1;
+          element.style.transform = 'translate(0, 0)';
+        }
+      });
+    };
+    
+    // Run once on load
+    animateOnScroll();
+    
+    // Run on scroll
+    window.addEventListener('scroll', animateOnScroll);
+  });
+</script>
+
+{% endblock %}

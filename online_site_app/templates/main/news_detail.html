@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-5 animate__animated animate__fadeIn">
+    <div class="card shadow-lg border-0 overflow-hidden">
+        <!-- News Header with Gradient Background -->
+        <div class="card-header bg-gradient-primary text-white py-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="mb-0">{{ news.title }}</h2>
+                <small class="opacity-75">{{ news.created_at|date:"Y-m-d H:i" }}</small>
+            </div>
+        </div>
+
+        <div class="card-body p-4">
+            {% if news.image %}
+            <!-- Image with hover zoom effect -->
+            <div class="my-4 text-center news-image-container">
+                <img src="{{ news.image.url }}" alt="{{ news.title }}" 
+                     class="img-fluid rounded-3 shadow-sm news-image"
+                     style="max-height: 500px; cursor: zoom-in;">
+                <div class="image-caption text-muted mt-2">
+                    <small>Rasmni kattalashtirish uchun bosing</small>
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- News Content with improved typography -->
+            <div class="news-content fs-5 mt-4 lh-lg">
+                {{ news.content|linebreaks }}
+            </div>
+
+            <!-- Back button with animation -->
+            <div class="text-center mt-5">
+                <a href="{% url 'news_list' %}" class="btn btn-primary btn-gradient-hover px-4 py-2 rounded-pill">
+                    <i class="bi bi-arrow-left me-2"></i> Barcha yangiliklar
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Image Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content border-0">
+            <div class="modal-body p-0 text-center">
+                <img src="" id="modalImage" class="img-fluid" style="max-height: 90vh;">
+            </div>
+            <div class="modal-footer justify-content-center border-0">
+                <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill" data-bs-dismiss="modal">
+                    <i class="bi bi-x-lg me-1"></i> Yopish
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Styles -->
+<style>
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+    
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+    }
+    
+    .news-image-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.5rem;
+    }
+    
+    .news-image {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .news-image:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .news-content {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+    }
+    
+    .news-content p {
+        margin-bottom: 1.2rem;
+    }
+    
+    .btn-gradient-hover {
+        background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+        border: none;
+        color: white;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .btn-gradient-hover:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(58, 123, 213, 0.4);
+    }
+    
+    .btn-gradient-hover:active {
+        transform: translateY(0);
+    }
+    
+    .image-caption {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .news-image-container:hover .image-caption {
+        opacity: 1;
+    }
+</style>
+
+<!-- JavaScript for Image Zoom -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Image modal functionality
+        const newsImage = document.querySelector('.news-image');
+        const modalImage = document.getElementById('modalImage');
+        const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+        
+        if (newsImage) {
+            newsImage.addEventListener('click', function() {
+                modalImage.src = this.src;
+                imageModal.show();
+            });
+        }
+        
+        // Add animation to back button on hover
+        const backButton = document.querySelector('.btn-gradient-hover');
+        if (backButton) {
+            backButton.addEventListener('mouseenter', function() {
+                this.querySelector('i').classList.add('animate__animated', 'animate__rubberBand');
+            });
+            
+            backButton.addEventListener('mouseleave', function() {
+                this.querySelector('i').classList.remove('animate__animated', 'animate__rubberBand');
+            });
+        }
+    });
+</script>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+{% endblock %}

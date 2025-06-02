@@ -1,0 +1,114 @@
+{% extends "base.html" %} {% block content %}
+
+<style>
+  .form-container {
+    max-width: 400px;
+    width: 90%;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  form p {
+    margin-bottom: 20px;
+  }
+
+  form p label {
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  form p input,
+  form p select,
+  form p textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+  }
+
+  form p input:focus,
+  form p select:focus,
+  form p textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+    background-color: #fff;
+  }
+
+  .form-container button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .form-container button:hover {
+    background: linear-gradient(135deg, #0056b3, #003b80);
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 500px) {
+    .form-container {
+      padding: 20px;
+      margin: 30px auto;
+    }
+
+    .form-container h2 {
+      font-size: 20px;
+    }
+
+    .form-container button {
+      font-size: 15px;
+    }
+  }
+</style>
+
+<div class="form-container">
+  <h2>Kirish</h2>
+  <form method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Kirish</button>
+  </form>
+</div>
+
+{% endblock %}
